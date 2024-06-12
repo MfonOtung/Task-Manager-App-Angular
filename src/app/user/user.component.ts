@@ -41,6 +41,20 @@
 
 import { Component, EventEmitter, Input,  Output, output } from '@angular/core';
 //import an 'Input' decorator
+
+type User = {
+  id: string;
+  avatar: string;
+  name: string;
+}
+
+//or 
+// interface User {
+//   id: string;
+//   avatar: string;
+//   name: string;
+// }
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -51,11 +65,7 @@ import { Component, EventEmitter, Input,  Output, output } from '@angular/core';
 //To have a displayed list of user and their task when clicked:
 //Also get rid of the signal and computed imports
 export class UserComponent {
-  @Input({required: true }) user!: {
-    id: string;
-    avatar: string;
-    name: string;
-  };
+  @Input({required: true }) user!: User;
   @Output() select = new EventEmitter(); 
 
   // @Input() avatar!: string;
