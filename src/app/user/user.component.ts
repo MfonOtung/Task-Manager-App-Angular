@@ -51,16 +51,23 @@ import { Component, EventEmitter, Input,  Output, output } from '@angular/core';
 //To have a displayed list of user and their task when clicked:
 //Also get rid of the signal and computed imports
 export class UserComponent {
+  @Input({required: true }) user!: {
+    id: string;
+    avatar: string;
+    name: string;
+  };
+  @Output() select = new EventEmitter(); 
+
   // @Input() avatar!: string;
   // @Input() name!: string;
 
   //To check incomplete data input
-  @Input({ required: true }) id!: string;
-  @Input({required: true}) avatar!: string;
-  @Input({required: true}) name!: string;
+  //@Input({ required: true }) id!: string;
+  //@Input({required: true}) avatar!: string;
+  //@Input({required: true}) name!: string;
   //To display tasks of users:
   //import Output
-  @Output() select = new EventEmitter(); 
+  //@Output() select = new EventEmitter(); 
   //or
   //select = output<string>();
 
@@ -77,10 +84,10 @@ export class UserComponent {
   // });
 
   get imagePath() {
-    return 'assets/images/users/' + this.avatar;
+    return 'assets/images/users/' + this.user.avatar;
   }
 
   onSelectUser() { 
-    this.select.emit(this.id);
+    this.select.emit(this.user.id);
   }
 }
