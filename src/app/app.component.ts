@@ -11,8 +11,8 @@ import { DUMMY_USERS } from './dummy-users';
     standalone: true,
     // imports: [CommonModule, RouterOutlet],
     templateUrl: './app.component.html',
-    styleUrl: './header/header.component.css'
-    //styleUrl: './app.component.css'
+    //styleUrl: './header/header.component.css'
+    styleUrl: './app.component.css'
     ,
     imports: [HeaderComponent, UserComponent, TasksComponent]
 })

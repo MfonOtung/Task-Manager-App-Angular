@@ -39,14 +39,16 @@
 
 
 
-import { Component, EventEmitter, Input,  Output, output } from '@angular/core';
+import { Component, EventEmitter, Input,  Output } from '@angular/core';
 //import an 'Input' decorator
+import { type User } from './user.model';
+import { CardComponent } from "../shared/card/card.component";
 
-type User = {
-  id: string;
-  avatar: string;
-  name: string;
-}
+// type User = {
+//   id: string;
+//   avatar: string;
+//   name: string;
+// }
 
 //or 
 // interface User {
@@ -56,17 +58,18 @@ type User = {
 // }
 
 @Component({
-  selector: 'app-user',
-  standalone: true,
-  templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
-  
+    selector: 'app-user',
+    standalone: true,
+    templateUrl: './user.component.html',
+    styleUrl: './user.component.css',
+    imports: [CardComponent]
 })
 //To have a displayed list of user and their task when clicked:
 //Also get rid of the signal and computed imports
 export class UserComponent {
   @Input({required: true }) user!: User;
-  @Output() select = new EventEmitter(); 
+  @Input({required: true}) selected!: boolean;
+  @Output() select = new EventEmitter<string>(); 
 
   // @Input() avatar!: string;
   // @Input() name!: string;
@@ -87,7 +90,7 @@ export class UserComponent {
    //name = input.required("");
    //avatar = input.required<string>();
    //name = input.required<string>();
-  //name = input<string>()
+  //name = input<string>()s
   
   // imagePath = computed(() => {
   //   return 'assets/images/users/' + this.avatar();
