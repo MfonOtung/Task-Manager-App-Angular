@@ -59,10 +59,10 @@ import { CardComponent } from "../shared/card/card.component";
 
 @Component({
     selector: 'app-user',
-    standalone: true,
+    //standalone: true,
     templateUrl: './user.component.html',
     styleUrl: './user.component.css',
-    imports: [CardComponent]
+    //imports: [CardComponent]
 })
 //To have a displayed list of user and their task when clicked:
 //Also get rid of the signal and computed imports
