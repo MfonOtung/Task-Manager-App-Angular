@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { UserComponent } from "./user/user.component";
-import { TasksComponent } from './tasks/tasks.component';
+//import { HeaderComponent } from './header/header.component';
+//import { UserComponent } from "./user/user.component";
+//import { TasksComponent } from './tasks/tasks.component';
 import { DUMMY_USERS } from './dummy-users';
 
 @Component({
     selector: 'app-root',
-    standalone: true,
+    //standalone: true,
     // imports: [CommonModule, RouterOutlet],
     templateUrl: './app.component.html',
     //styleUrl: './header/header.component.css'
     styleUrl: './app.component.css'
     ,
-    imports: [HeaderComponent, UserComponent, TasksComponent]
+    //imports: [HeaderComponent, UserComponent, TasksComponent]
 })
 export class AppComponent {
   title = 'udemy-angular-app';
